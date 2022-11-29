@@ -1,9 +1,10 @@
+from typing import Union
 import requests
 import dataclasses
 import json
 
 class JurnalRepository:
-    def __init__(self, octoHost: str|None, label: str|None ) -> None:
+    def __init__(self, octoHost: Union[str, None], label: Union[str,None] ) -> None:
         self.host = octoHost
         self.label = label
 

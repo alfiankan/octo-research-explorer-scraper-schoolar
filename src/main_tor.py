@@ -18,7 +18,7 @@ from repository import JurnalRepository
 def start():
     print("starting scraper at {} with name {}".format(datetime.now(),  os.getenv("SCRAPER_NAME") ))
 
-    tbb_dir = '../tor-browser_en-US'
+    tbb_dir = 'tor-browser_en-US'
 
     xvfb_display = start_xvfb()
 
@@ -30,7 +30,7 @@ def start():
     tor_process = launch_tbb_tor_with_stem(tbb_path=tbb_dir, torrc=torrc, tor_binary=tor_binary)
 
     Controller.from_port(port=control_port).authenticate()
-    driver = TorBrowserDriver(tbb_dir, socks_port=socks_port, control_port=control_port, tor_cfg=cm.USE_STEM,tbb_logfile_path='/dev/stdout' )
+    driver = TorBrowserDriver(tbb_dir, socks_port=socks_port, control_port=control_port, tor_cfg=cm.USE_STEM,tbb_logfile_path='/dev/null' )
     driver.load_url("https://scholar.google.com")
     print("CONNECTED")
     print(driver.page_source)
