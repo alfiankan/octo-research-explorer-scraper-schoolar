@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 
-RUN tar -xvf tor-browser-linux64-11.5.8_en-US.tar.xz
+RUN tar -xf tor-browser-linux64-11.5.8_en-US.tar.xz
 
 RUN /usr/local/bin/python -m pip install --upgrade pip
 
