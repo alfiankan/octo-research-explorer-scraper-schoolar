@@ -7,6 +7,7 @@ WORKDIR /app
 
 COPY . .
 
+RUN wget https://www.torproject.org/dist/torbrowser/11.5.8/tor-browser-linux64-11.5.8_en-US.tar.xz
 
 RUN tar -xf tor-browser-linux64-11.5.8_en-US.tar.xz
 
