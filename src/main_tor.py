@@ -16,7 +16,7 @@ from repository import JurnalRepository
 
 
 def start():
-    print("starting scraper at {} with name {}".format(datetime.now(),  os.getenv("SCRAPER_NAME") ))
+    print("starting scraper at {} with name {}".format(datetime.now(),  os.getenv("SCRAPER_LABEL") ))
 
     tbb_dir = 'tor-browser_en-US'
 
