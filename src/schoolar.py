@@ -58,7 +58,7 @@ class SchoolarScraper:
 
                     print("GET PAGE KE " + str(page))
 
-                    keyword = self.scraper_daerah_keyword.replace(" ", "+")
+                    keyword = self.scraper_topic_keyword.replace(" ", "+") + "+" + self.scraper_daerah_keyword.replace(" ", "+")
                     uri = 'https://scholar.google.com/scholar?start={0}&q=%22{1}%22&as_ylo=2010'.format(page, keyword)
                     print("URL => ", uri)
                     self.webDriver.get(uri)
