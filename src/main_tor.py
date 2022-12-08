@@ -16,7 +16,7 @@ from repository import JurnalRepository
 
 
 def start():
-    print("starting scraper at {} with name {}".format(datetime.now(),  os.getenv("SCRAPER_LABEL") ))
+    print("starting scraper at {} with name {}".format(datetime.now(),  os.getenv("HOSTNAME") ))
 
     tbb_dir = 'tor-browser_en-US'
 
@@ -35,7 +35,7 @@ def start():
     print("CONNECTED")
     print(driver.page_source)
 
-    octoRepository = JurnalRepository(octoHost=os.getenv("OCTO_HOST"), label=os.getenv("SCRAPER_LABEL"))
+    octoRepository = JurnalRepository(octoHost=os.getenv("OCTO_HOST"), label=os.getenv("HOSTNAME"))
 
     scraper_agent =  SchoolarScraper(webDriver=driver, octoRepository=octoRepository)
     scraper_agent.scraper_topic_keyword = "ruang terbuka"
